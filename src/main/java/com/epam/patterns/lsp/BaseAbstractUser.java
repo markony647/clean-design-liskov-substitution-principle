@@ -10,7 +10,7 @@ public abstract class BaseAbstractUser {
         accessRights = new HashMap<>();
     }
 
-    abstract void setUpAccessRight(String right, boolean value);
+    abstract void setupAccessRight(String right, boolean value);
 
     public boolean hasRight(String right) {
         return accessRights.getOrDefault(right, false);

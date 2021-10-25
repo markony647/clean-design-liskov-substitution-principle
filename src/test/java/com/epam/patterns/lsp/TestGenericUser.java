@@ -16,7 +16,7 @@ public class TestGenericUser {
         protectedRights.add(WRITE_TO_DATABASE);
 
         GenericUser genericUser = new GenericUser(protectedRights);
-        genericUser.setUpAccessRight(WRITE_TO_DATABASE, true);
+        genericUser.setupAccessRight(WRITE_TO_DATABASE, true);
 
         assertFalse(genericUser.hasRight(WRITE_TO_DATABASE));
     }
@@ -26,7 +26,7 @@ public class TestGenericUser {
         final String CHANGE_IN_DATABASE = "change in database";
 
         GenericUser genericUser = new GenericUser(new HashSet<>());
-        genericUser.setUpAccessRight(CHANGE_IN_DATABASE, true);
+        genericUser.setupAccessRight(CHANGE_IN_DATABASE, true);
 
         assertTrue(genericUser.hasRight(CHANGE_IN_DATABASE));
     }

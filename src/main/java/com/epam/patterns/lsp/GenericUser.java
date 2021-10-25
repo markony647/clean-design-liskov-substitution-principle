@@ -12,7 +12,7 @@ class GenericUser extends BaseAbstractUser {
     }
 
     @Override
-    void setUpAccessRight(String right, boolean value) {
+    void setupAccessRight(String right, boolean value) {
         if (canBeAdded(right)) {
             add(right, value);
         }

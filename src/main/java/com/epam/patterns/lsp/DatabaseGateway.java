@@ -6,12 +6,12 @@ class DatabaseGateway {
 
     private static String database;
 
-    static void writeToDBForce(BaseAbstractUser user, String message) {
+    static void writeToDBForce(AbstractUser user, String message) {
         user.setupAccessRight(WRITE_TO_DATABASE, true);
         writeToDB(user, message);
     }
 
-    static void writeToDB(BaseAbstractUser user, String message) {
+    static void writeToDB(AbstractUser user, String message) {
         if (user.hasRight(WRITE_TO_DATABASE)) {
             database = message;
         }

@@ -1,10 +1,10 @@
 package com.epam.patterns.lsp;
 
-class PowerUser extends BaseAbstractUser {
+class PowerUser extends AbstractUser {
 
     @Override
     void setupAccessRight(String right, boolean value) {
-        accessRights.put(right, value);
+        addRight(right, value);
     }
 
 }

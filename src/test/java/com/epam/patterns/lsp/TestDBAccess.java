@@ -10,7 +10,7 @@ public class TestDBAccess {
     @Test
     public void testPowerUser() {
 
-        BaseAbstractUser powerUser = new PowerUser();
+        AbstractUser powerUser = new PowerUser();
 
         writeToDBForce(powerUser, "payload");
         assertEquals(readFromDB(), "payload");

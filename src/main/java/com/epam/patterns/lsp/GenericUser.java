@@ -1,10 +1,11 @@
 package com.epam.patterns.lsp;
 
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
-class GenericUser extends PowerUser {
-    private Set<String> protectedRights;
+class GenericUser extends AbstractUser {
+
+    private final Set<String> protectedRights;
 
     GenericUser(HashSet<String> protectedRights) {
         this.protectedRights = protectedRights;
@@ -12,9 +13,12 @@ class GenericUser extends PowerUser {
 
     @Override
     void setupAccessRight(String right, boolean value) {
-        if (!protectedRights.contains(right)) {
-            accessRights.put(right, value);
+        if (canBeAdded(right)) {
+            addRight(right, value);
         }
     }
 
+    private boolean canBeAdded(String right) {
+        return !protectedRights.contains(right);
+    }
 }
